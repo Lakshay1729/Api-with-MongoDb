@@ -23,7 +23,7 @@ public class ViewResource {
 	@Autowired
 	private UserService userService;
 	
-	@GetMapping("/index")
+	@GetMapping("/")
 	public String getData(Model model){
 		
 		
@@ -71,7 +71,7 @@ public class ViewResource {
 //		 
 //		 
 //		    mv.setViewName("add-user");
-		    return "redirect:/index";
+		    return "redirect:/";
 	}
 	
 }
