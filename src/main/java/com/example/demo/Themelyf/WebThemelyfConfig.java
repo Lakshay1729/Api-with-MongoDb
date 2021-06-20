@@ -38,7 +38,7 @@ public class WebThemelyfConfig implements WebMvcConfigurer {
     @Description("Thymeleaf view resolver")
     public ViewResolver viewResolver() {
 
-        var viewResolver = new ThymeleafViewResolver();
+         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
 
         viewResolver.setTemplateEngine(templateEngine());
         viewResolver.setCharacterEncoding("UTF-8");
