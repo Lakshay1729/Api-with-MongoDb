@@ -8,9 +8,11 @@
 </title>
 </head>
 <body>
-<form method="post" th:action="@{/create-user}" th:object="${userInfo}">
-        <input id="name" placeholder="Enter Name" required type="text" th:field="*{name}"/>
-        <input id="description" placeholder="Enter Description" required type="text" th:field="*{description}"/>
+<form method="post" th:action="@{/create-user}" th:object="${userInfo}" enctype="multipart/form-data">
+       Name: <input id="name" placeholder="Enter Name" required type="text" th:field="*{name}"/>
+       Description: <input id="description" placeholder="Enter Description" required type="text" th:field="*{description}"/>
+        Image:<input type="file" name="image" accept="image/*" />
+   
        
     
     <input type="submit" value="Create User">

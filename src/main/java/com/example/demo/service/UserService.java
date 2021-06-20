@@ -1,9 +1,12 @@
 package com.example.demo.service;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.bson.BsonBinarySubType;
+import org.bson.types.Binary;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,11 +20,11 @@ public class UserService {
 	@Autowired
 	private UsersRepository userRepo;
 	@Transactional
-	public Integer addUser(UserNewRequest user) {
+	public Integer addUser(UserNewRequest user) throws IOException {
 		Users userEntity=new Users();
 		userEntity.setName(user.getName());
 		userEntity.setDescription(user.getDescription());
-		userEntity.setImage(user.getImage());
+		userEntity.setImage(new Binary(BsonBinarySubType.BINARY, user.getImage().getBytes()));
 		userRepo.save(userEntity);
 		return 200;
 	}

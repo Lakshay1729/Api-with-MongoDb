@@ -1,16 +1,14 @@
 package com.example.demo.resource;
 
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.document.Users;
@@ -28,6 +26,7 @@ public class ViewResource {
 		
 		
 		model.addAttribute("at",userService.getAllUsers());
+		
 //		System.out.println(userService.getAllUsers().get(0).getDescription());
 		return "/index";
 	}
@@ -56,7 +55,7 @@ public class ViewResource {
 	@RequestMapping(value = "/create-user",method=RequestMethod.POST)
 	public String createUser(
 			@ModelAttribute UserNewRequest userInfo,
-			Model model) {
+			Model model) throws IOException {
 //	  logger.info("first Name : {}", firstName);
 //	  logger.info("Last Name : {}", lastName);
 //	  logger.info("Role: {}", role);
