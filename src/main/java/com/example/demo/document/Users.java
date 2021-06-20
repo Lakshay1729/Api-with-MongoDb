@@ -16,6 +16,12 @@ public class Users {
 	private String name;
 	private String description;
 	private String image;
+	public Users(String name,String description) {
+		id=new ObjectId();
+		this.name=name;
+		this.description=description;
+		
+	}
 	public Users() {
 		id=new ObjectId();
 	}

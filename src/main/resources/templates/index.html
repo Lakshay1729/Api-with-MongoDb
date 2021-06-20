@@ -1,0 +1,30 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+
+<html>
+<head>
+<title>
+     E-commerce
+</title>
+</head>
+<body>
+
+<table>
+    <thead>
+        <tr>
+            <th> Name </th>
+            <th> Description </th>
+        </tr>
+    </thead>
+    <tbody>
+	<tr th:if="${at.empty}">
+            <td colspan="2"> No Users Available </td>
+        </tr>
+        <tr th:each="user : ${at}">
+            <td><span th:text="${user.name}"> Name </span></td>
+            <td><span th:text="${user.description}"> Description </span></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
