@@ -25,9 +25,11 @@
         <tr th:each="user : ${at}">
             <td><span th:text="${user.name}"> Name </span></td>
             <td><span th:text="${user.description}"> Description </span></td>
-            <td><span style="max-height: 300px; max-width: 300px;"><img style="max-height: 10%; max-width: 10%;" alt="sample" th:src="*{'data:image/*;base64,'+user.image}" /></span></td>
+            <td><span style="max-height: 200px; max-width: 200px;"><img style="max-height: 100%; max-width: 100%;" alt="sample" th:src="*{'data:image/*;base64,'+user.image}" /></span></td>
         </tr>
     </tbody>
 </table>
+
+
 </body>
 </html>
